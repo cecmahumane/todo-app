@@ -23,11 +23,11 @@ export default class TodoList extends Component {
   }
 
   render() {
-    return this.state.map((todo) => (
+    return this.props.state.map((todo) => (
       <Todo editTodo={this.editTodo} 
             deleteTodo={this.deleteTodo} 
             markCompleted={this.markCompleted}
-            todo={todo}
+            todo={todo.title}
             key={todo.id}
             />
     ))

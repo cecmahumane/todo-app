@@ -5,14 +5,27 @@ import './App.css';
 
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = [
+      {
+        id: 1234,
+        title: "example",
+        isCompleted: false
+      }
+    ]
+    this.addTodo = this.addTodo.bind(this);
+  }
   
-  
-  
+  addTodo = (title) => {
+    alert(title)
+  }
+
   render() {
     return (
       <div>
-        <TodoList/>
-        <CreateTodo />
+        <TodoList state={this.state}/>
+        <CreateTodo addTodo={this.addTodo}/>
       </div>
     )
   }
