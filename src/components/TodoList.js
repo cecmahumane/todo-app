@@ -4,10 +4,7 @@ import Todo from './Todo'
 export default class TodoList extends Component {
   constructor(props) {
     super(props); 
-      this.state = {
-        todoTitle: [],
-        completed: []
-      }
+      
       this.editTodo = this.editTodo.bind(this);
       this.deleteTodo = this.deleteTodo.bind(this);
       this.markCompleted = this.markCompleted.bind(this);
@@ -26,12 +23,23 @@ export default class TodoList extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <p>TodoList</p>
-        <Todo editTodo={this.editTodo} deleteTodo={this.deleteTodo} markCompleted={this.markCompleted}/>
-      </div>
-
-    )
+    return this.state.map((todo) => (
+      <Todo editTodo={this.editTodo} 
+            deleteTodo={this.deleteTodo} 
+            markCompleted={this.markCompleted}
+            todo={todo}
+            key={todo.id}
+            />
+    ))
   }
 }
+
+
+
+
+// (
+//   <div>
+//     <Todo editTodo={this.editTodo} deleteTodo={this.deleteTodo} markCompleted={this.markCompleted}/>
+//   </div>
+
+// )
