@@ -7,7 +7,7 @@ export default class Todo extends Component {
                <input type='checkbox' onChange={() => this.props.markCompleted(this.props.id)}/>
                <p>{this.props.todo}</p> 
                <button onClick={this.props.editTodo} >Edit</button>
-               <button onClick={this.props.deleteTodo}>Delete</button>
+               <button onClick={() => this.props.deleteTodo(this.props.id)}>Delete</button>
                <hr/>
             </div>
         )

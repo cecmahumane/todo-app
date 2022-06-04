@@ -17,7 +17,9 @@ export default class App extends Component {
       ]
     }
     this.addTodo = this.addTodo.bind(this);
-    this.markCompleted = this.markCompleted.bind(this)
+    this.markCompleted = this.markCompleted.bind(this);
+    this.editTodo = this.editTodo.bind(this);
+    this.deleteTodo = this.deleteTodo.bind(this);
   }
   
   addTodo = (title) => {
@@ -35,10 +37,24 @@ export default class App extends Component {
     })
   }
 
+  editTodo = () => {
+    alert('edit button working')
+  }
+
+  deleteTodo = (id) => {
+    alert('delete button working')
+    this.setState({
+      todos:
+      [...this.state.todos.filter(todo => todo.id !== id)]
+    })
+  }
+
   markCompleted = (id) => {
     // alert('completed button working')
-    console.log(id)
-    this.setState({ todos: this.state.todos.map(todo => {
+    // console.log(id)
+    this.setState({ 
+      todos: 
+      this.state.todos.map(todo => {
       // console.log(todo)
       if (todo.id === id) {
         todo.isCompleted = !todo.isCompleted
@@ -56,6 +72,8 @@ export default class App extends Component {
       <div>
         <TodoList state={this.state.todos}
                   markCompleted={this.markCompleted}
+                  editTodo={this.editTodo}
+                  deleteTodo={this.deleteTodo}
                   />
         <CreateTodo addTodo={this.addTodo}/>
       </div>
