@@ -7,7 +7,7 @@ export default class TodoList extends Component {
       
       this.editTodo = this.editTodo.bind(this);
       this.deleteTodo = this.deleteTodo.bind(this);
-      this.markCompleted = this.markCompleted.bind(this);
+      // this.markCompleted = this.markCompleted.bind(this);
   }
 
   editTodo = () => {
@@ -18,17 +18,25 @@ export default class TodoList extends Component {
     alert('delete button working')
   }
   
-  markCompleted = () => {
-    alert('completed button working')
-  }
+  // markCompleted = (id) => {
+  //   // alert('completed button working')
+  //   this.props.setState({ todos: this.props.state.map(todo => {
+  //     if (todo.id === id) {
+  //       todo.isCompleted = !todo.isCompleted
+  //     }
+  //     alert("status changed")
+  //     return todo
+  //   })})
+  // }
 
   render() {
     return this.props.state.map((todo) => (
       <Todo editTodo={this.editTodo} 
             deleteTodo={this.deleteTodo} 
-            markCompleted={this.markCompleted}
+            markCompleted={this.props.markCompleted}
             todo={todo.title}
             key={todo.id}
+            id={todo.id}
             />
     ))
   }

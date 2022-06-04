@@ -17,6 +17,7 @@ export default class App extends Component {
       ]
     }
     this.addTodo = this.addTodo.bind(this);
+    this.markCompleted = this.markCompleted.bind(this)
   }
   
   addTodo = (title) => {
@@ -34,10 +35,28 @@ export default class App extends Component {
     })
   }
 
+  markCompleted = (id) => {
+    // alert('completed button working')
+    console.log(id)
+    this.setState({ todos: this.state.todos.map(todo => {
+      // console.log(todo)
+      if (todo.id === id) {
+        todo.isCompleted = !todo.isCompleted
+      }
+      // alert("status changed")
+      return todo
+    })})
+  }
+
+
+
+
   render() {
     return (
       <div>
-        <TodoList state={this.state.todos}/>
+        <TodoList state={this.state.todos}
+                  markCompleted={this.markCompleted}
+                  />
         <CreateTodo addTodo={this.addTodo}/>
       </div>
     )
