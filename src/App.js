@@ -12,7 +12,8 @@ export default class App extends Component {
         {
           title: "example",
           id: 123,
-          isCompleted: false
+          isCompleted: false,
+          toEdit: false
         }
       ]
     }
@@ -23,22 +24,36 @@ export default class App extends Component {
   }
   
   addTodo = (title) => {
-    alert(title)
     this.setState({ 
       todos: [
         ...this.state.todos,
         {
         title: title,
         id: uuidv4(),
-        isCompleted: false
+        isCompleted: false,
+        toEdit: false
         }
       ]
       
     })
   }
 
-  editTodo = () => {
-    alert('edit button working')
+  editTodo = (id, title) => {
+    this.setState({
+      todos:
+      this.state.todos.map(todo => {
+        if (todo.id === id) {
+          if (todo.toEdit === false) {
+            todo.toEdit = !todo.toEdit
+          } else {
+            todo.toEdit = !todo.toEdit
+            todo.title = title
+          }
+        }
+        return todo
+      })
+    })
+    console.log(id , title)
   }
 
   deleteTodo = (id) => {
@@ -50,16 +65,12 @@ export default class App extends Component {
   }
 
   markCompleted = (id) => {
-    // alert('completed button working')
-    // console.log(id)
     this.setState({ 
       todos: 
       this.state.todos.map(todo => {
-      // console.log(todo)
       if (todo.id === id) {
         todo.isCompleted = !todo.isCompleted
       }
-      // alert("status changed")
       return todo
     })})
   }
