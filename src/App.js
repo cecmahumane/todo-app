@@ -57,7 +57,7 @@ export default class App extends Component {
   }
 
   deleteTodo = (id) => {
-    alert('delete button working')
+    // alert('delete button working')
     this.setState({
       todos:
       [...this.state.todos.filter(todo => todo.id !== id)]
