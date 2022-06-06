@@ -9,8 +9,12 @@ export class CreateTodo extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.addTodo(this.state.title)
-        this.setState({title: ""})
+        if (this.state.title === "") {
+            alert("Please enter a todo")
+        } else {
+            this.props.addTodo(this.state.title)
+            this.setState({title: ""})
+        }
     }
 
     render() {

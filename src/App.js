@@ -53,7 +53,7 @@ export default class App extends Component {
         return todo
       })
     })
-    console.log(id , title)
+    // console.log(id , title)
   }
 
   deleteTodo = (id) => {
