@@ -80,7 +80,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='main-container'>
         <TodoList state={this.state.todos}
                   markCompleted={this.markCompleted}
                   editTodo={this.editTodo}
