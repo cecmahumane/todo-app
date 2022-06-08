@@ -1,0 +1,36 @@
+.todo-element {
+    display: flex;
+    /* justify-content:center; */
+    align-items: center;
+}
+
+.whole-todo-element:hover:hover {
+    background-color: aquamarine;
+}
+
+.checkbox-btn {
+    margin-right: 20px;
+}
+
+.edit-btn {
+    margin-left: 20px;
+    color: white;
+    background-color: green;
+}
+
+.delete-btn {
+    color: white;
+    margin-left: 5px;
+    background-color: red;
+}
+
+.edit-btn, .delete-btn {
+    border-radius: 5px;
+    padding: 10px;
+    width: 60px;
+    border: none;
+}
+
+.divider {
+    margin: 0;
+}
