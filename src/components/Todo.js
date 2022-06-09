@@ -6,6 +6,7 @@ export default class Todo extends Component {
         this.state = {
             title: ''
         }
+        this.onClickEditHandler = this.onClickEditHandler.bind(this)
     }
     
     
@@ -14,17 +15,21 @@ export default class Todo extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         if (this.state.title === '') {
+            console.log(this.props.todo)
             this.setState({title: this.props.todo})
             console.log(this.state.title)
-            this.props.editTodo(this.props.id, this.state.title)
+            this.props.editTodo(this.props.id, this.props.todo)
             
         } else {
         this.props.editTodo(this.props.id, this.state.title)
-        this.setState({title: ""})
         }
     }
     
-    
+    onClickEditHandler = () => {
+        this.props.editTodo(this.props.id, this.props.todo)
+        this.setState({title: ''})
+    }
+
     render() {
         // console.log(this.state)
         return (
@@ -37,7 +42,7 @@ export default class Todo extends Component {
                         <input type='submit' value='Save Edit' className="save-edit-btn" />
                     </form>           
                     : <p className="todo">{this.props.todo}</p>}
-                { this.props.toEdit === false && <button className="edit-btn" onClick={() => this.props.editTodo(this.props.id, this.state.title)}>Edit</button>}
+                { this.props.toEdit === false && <button className="edit-btn" onClick={() => this.onClickEditHandler()}>Edit</button>}
                 <button className="delete-btn" onClick={() => this.props.deleteTodo(this.props.id)}>Delete</button>
                </div> 
                <hr className="divider"/>
