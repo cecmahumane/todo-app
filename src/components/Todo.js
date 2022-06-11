@@ -9,7 +9,6 @@ export default class Todo extends Component {
         this.onClickEditHandler = this.onClickEditHandler.bind(this)
     }
     
-    
     onChange = (e) => this.setState({ [e.target.name]: e.target.value});
     
     onSubmit = (e) => {
