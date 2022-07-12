@@ -1,4 +1,6 @@
 import React , { Component }  from "react";
+import { useSelector, useDispatch } from "react-redux/es/exports";
+import { addTodo, deleteTodo } from "../features/todoSlice";
 
 export default class Todo extends Component { 
     constructor(props) {
@@ -8,7 +10,7 @@ export default class Todo extends Component {
         }
         this.onClickEditHandler = this.onClickEditHandler.bind(this)
     }
-    
+
     onChange = (e) => this.setState({ [e.target.name]: e.target.value});
     
     onSubmit = (e) => {

@@ -3,6 +3,8 @@ import TodoList from './components/TodoList'
 import { CreateTodo } from './components/CreateTodo';
 import './App.css';
 import { v4 as uuidv4 } from 'uuid'
+import store from './store';
+import { addTodo } from './features/todoSlice';
 
 export default class App extends Component {
   constructor(props) {
@@ -24,6 +26,7 @@ export default class App extends Component {
   }
   
   addTodo = (title) => {
+    store.dispatch(addTodo()) 
     this.setState({ 
       todos: [
         ...this.state.todos,
@@ -91,31 +94,3 @@ export default class App extends Component {
     )
   }
 }
-
-
-
-
-
-
-
-
-// import TodoList from './components/TodoList'
-// import { CreateTodo } from './components/CreateTodo';
-// import './App.css';
-// import { v4 as uuidv4 } from 'uuid'
-
-// function App() {
-
-//   let addTodo = (title, id) => {
-//     alert(title, id)
-//   }
-
-//   return (
-//     <div className="App">
-//       <TodoList/>
-//       <CreateTodo />
-//     </div>
-//   );
-// }
-
-// export default App;
