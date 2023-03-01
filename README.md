@@ -1,6 +1,6 @@
 # Simple todo app 
 
-This is a solution to the [Product preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to a challenge proposed to me by my mentor Frank Davies, to produce a working todo application.
 
 ## Table of contents
 
@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/cecmahumane/todo-app](https://github.com/cecmahumane/todo-app)
+- Solution URL: [https://todo-app.cecilmahumane.com](https://todo-app.cecilmahumane.com)
 
 ## My process
 
@@ -53,7 +53,7 @@ In a future todo app using functional components I would like to instate Redux f
 
 ## Author
 
-- Website - [Cecil Mahumane](https://github.com/cecmahumane)
+- Website - [Cecil Mahumane](https://home.cecilmahumane.com)
 
 ## Acknowledgments
 
