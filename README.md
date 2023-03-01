@@ -21,8 +21,8 @@ This is a solution to a challenge proposed to me by my mentor Frank Davies, to p
 
 Users should be able to:
 
-- Users should be able to add, edit, and delete todo elements. 
-- Users should also be able to check and uncheck the individual todo elements off as completed.
+- Add, edit, and delete todo elements. 
+- Check and uncheck the individual todo elements off as completed.
 - See hover states for individual todo elements.
 
 ### Screenshot
